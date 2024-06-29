@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SectionGenericComponent {
 @Input() title: string = ''
+@Input() mode: 'small' | 'big' ='big'
+@Input() dataTracks: Array<any> = []
 constructor(){}
 
 ngOnInit():void {
