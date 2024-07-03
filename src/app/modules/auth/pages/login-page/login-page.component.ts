@@ -32,5 +32,10 @@ ngOnInit(): void {
 sendLogin():void {
   const {email, password} = this.formLogin.value
    this.authService.sendCredentials(email,password)
+   .subscribe(responseOk => {
+
+    }, 
+    err => {}
+    )
 }
 }
