@@ -2,6 +2,8 @@ import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login-page',
@@ -13,7 +15,8 @@ errorSession:boolean = false
 formLogin: FormGroup = new FormGroup({});
 
 
-constructor(private authService: AuthService, private cookie: CookieService){}
+constructor(private authService: AuthService, private cookie: CookieService,
+  private router: Router){}
 
 ngOnInit(): void {
   this.formLogin = new FormGroup(
@@ -38,6 +41,7 @@ sendLogin():void {
      console.log('Session iniciada correcta', responseOk);
      const {tokenSession, data}= responseOk
      this.cookie.set('token', tokenSession, 4, '/')
+     this.router.navigate(['/', 'tracks'])
     },
     err=> {
       this.errorSession = true
