@@ -37,7 +37,7 @@ ngOnInit(): void {
 sendLogin():void {
   const {email, password} = this.formLogin.value
    this.authService.sendCredentials(email,password)
-   .subscribe(responseOk => {
+    .subscribe(responseOk => {
      console.log('Session iniciada correcta', responseOk);
      const {tokenSession, data}= responseOk
      this.cookie.set('token', tokenSession, 4, '/')
