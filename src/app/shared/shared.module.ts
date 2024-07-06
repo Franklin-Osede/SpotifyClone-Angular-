@@ -27,8 +27,7 @@ import { HistoryPageComponent } from '@modules/history/history-page/history-page
     PlayListBodyComponent,
     OrderListPipe,
     ImgBrokenDirective,
-    SearchComponent,
-    HistoryPageComponent
+    
    
   ],
   imports: [
@@ -45,8 +44,7 @@ import { HistoryPageComponent } from '@modules/history/history-page/history-page
     PlayListBodyComponent,
     OrderListPipe,
     ImgBrokenDirective,
-    SearchComponent,
-    HistoryPageComponent
+ 
    
   ]
 })
