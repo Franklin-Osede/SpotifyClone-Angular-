@@ -39,7 +39,11 @@
                 <i class="uil uil-previous"></i>
             </button>
             <button (click)="multimediaService.togglePlayer()" class="play btn">
-                <i class="uil uil-play-circle"></i>
+                <i [ngClass]="{
+                    'uil-play-circle':state === 'paused',
+                    'uil-pause-circle':state !== 'paused'
+                }" class="uil "></i>
+                
             </button>
             <button class="arrow-btn">
                 <i class="uil uil-step-forward"></i>
