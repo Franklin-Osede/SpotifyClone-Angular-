@@ -20,10 +20,19 @@ export class MultimediaService {
       console.log('⚡️⚡️⚡️⚡️⚡️', responseOK)
       this.setAudio(responseOK)
     })
+
+    this.listenAllEvents()
    }
    private listenAllEvents(): void {
-
+    this.audio.addEventListener('timeupdate',this.calculateTime,false)
    }
+
+   private calculateTime():void{
+    console.log('Disparand evento')
+    const {duration, currentTime}=this. audio
+   }
+
+ 
 
    public setAudio(track: TrackModel):void{
     console.log('⚡️⚡️⚡️⚡️⚡️', track);
