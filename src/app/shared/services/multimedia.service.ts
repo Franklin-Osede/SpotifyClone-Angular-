@@ -23,7 +23,7 @@ export class MultimediaService {
     this.trackInfo$.subscribe(responseOK => {
       if(responseOK)
       console.log('⚡️⚡️⚡️⚡️⚡️', responseOK)
-      this.setAudio(responseOK)
+      this.seekAudio(responseOK)
     })
 
     this.listenAllEvents()
@@ -105,5 +105,12 @@ export class MultimediaService {
 
    public togglePlayer(): void {
     (this.audio.paused) ? this.audio.play() : this.audio.pause()
+   }
+
+   public seekAudio(percentage:number):void {
+    const {duration}= this.audio
+    const percentageToSecond = (percentage * duration)/100
+    this.audio.currentTime = percentageToSecond
+    
    }
 }
