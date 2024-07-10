@@ -1,6 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CardPlayerComponent } from './card-player.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@NgModule({
+  declarations: [CardPlayerComponent], // Declare CardPlayerComponent
+  exports: [CardPlayerComponent], // Export CardPlayerComponent
+  imports: [CommonModule] // Import CommonModule for Angular directives
+})
+class TestModule {} // End of Test Module
 
 describe('CardPlayerComponent', () => {
   let component: CardPlayerComponent;
@@ -8,7 +16,7 @@ describe('CardPlayerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CardPlayerComponent]
+      imports: [TestModule] // Use the Test Module here
     })
     .compileComponents();
 
