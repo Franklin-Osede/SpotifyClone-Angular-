@@ -2,7 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HistoryPageComponent } from './history-page.component';
 import { SearchComponent } from '../../components/search/search.component'; // Add this import
-
+import { PlayListBodyComponent } from '@shared/components/play-list-body/play-list-body.component';
 describe('HistoryPageComponent', () => {
   let component: HistoryPageComponent;
   let fixture: ComponentFixture<HistoryPageComponent>;
@@ -12,7 +12,8 @@ describe('HistoryPageComponent', () => {
       imports: [HttpClientTestingModule],
       declarations: [
         HistoryPageComponent,
-        SearchComponent // Add this declaration
+        SearchComponent, // Add this declaration
+        PlayListBodyComponent // Add this declaration
       ]
     })
       .compileComponents();
