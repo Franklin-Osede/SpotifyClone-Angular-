@@ -1,6 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SectionGenericComponent } from './section-generic.component'; // Correct import
+import { NgModule } from '@angular/core';
 
-import { SectionGenericComponent } from './section-generic.component';
+// Create a Test Module
+@NgModule({
+  declarations: [SectionGenericComponent], // Declare SectionGenericComponent
+  exports: [SectionGenericComponent] // Export SectionGenericComponent
+})
+class TestModule {} // End of Test Module
 
 describe('SectionGenericComponent', () => {
   let component: SectionGenericComponent;
@@ -8,9 +15,8 @@ describe('SectionGenericComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SectionGenericComponent]
-    })
-    .compileComponents();
+      imports: [TestModule] // Use the Test Module here
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SectionGenericComponent);
     component = fixture.componentInstance;

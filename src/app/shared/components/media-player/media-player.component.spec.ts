@@ -1,6 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MediaPlayerComponent } from './media-player.component';
+import { NgModule } from '@angular/core'; // Add this import
+
+// Create a Test Module
+@NgModule({
+  declarations: [MediaPlayerComponent], // Declare MediaPlayerComponent
+  exports: [MediaPlayerComponent] // Export MediaPlayerComponent
+})
+class TestModule {} // End of Test Module
 
 describe('MediaPlayerComponent', () => {
   let component: MediaPlayerComponent;
@@ -8,9 +15,8 @@ describe('MediaPlayerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MediaPlayerComponent]
-    })
-    .compileComponents();
+      imports: [TestModule] // Use the Test Module here
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MediaPlayerComponent);
     component = fixture.componentInstance;
