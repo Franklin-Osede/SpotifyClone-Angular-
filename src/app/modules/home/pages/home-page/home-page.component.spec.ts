@@ -4,6 +4,9 @@ import { SideBarComponent } from '@shared/components/side-bar/side-bar.component
 import { MediaPlayerComponent } from '@shared/components/media-player/media-player.component'; // Correctly import the MediaPlayerComponent
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'; // Add this import
+import { RouterTestingModule } from '@angular/router/testing'; // Add this import
+import { ActivatedRoute } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { CommonModule } from '@angular/common';
     SideBarComponent, // Export SideBarComponent
     MediaPlayerComponent // Export MediaPlayerComponent
   ],
-  imports: [CommonModule] // Import CommonModule for Angular directives
+  imports: [
+    CommonModule,
+    RouterModule // Import RouterModule for router-outlet
+  ] 
 })
 class TestModule {} // End of Test Module
 
@@ -26,7 +32,13 @@ describe('HomePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TestModule] // Use the Test Module here
+      imports: [
+        TestModule,
+        RouterTestingModule // Import RouterTestingModule for testing purposes
+      ],
+      providers: [
+        { provide: ActivatedRoute, useValue: {} } // Provide a mock ActivatedRoute
+      ]
     })
     .compileComponents();
 

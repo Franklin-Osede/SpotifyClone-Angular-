@@ -1,22 +1,29 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HistoryPageComponent } from './history-page.component';
-import { SearchComponent } from '../../components/search/search.component'; // Add this import
+import { SearchComponent } from '../../components/search/search.component';
 import { PlayListBodyComponent } from '@shared/components/play-list-body/play-list-body.component';
+import { OrderListPipe } from '@shared/pipe/order-list.pipe';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
+
 describe('HistoryPageComponent', () => {
   let component: HistoryPageComponent;
   let fixture: ComponentFixture<HistoryPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [
+        HttpClientTestingModule,
+        FormsModule // Add FormsModule to imports
+      ],
       declarations: [
         HistoryPageComponent,
-        SearchComponent, // Add this declaration
-        PlayListBodyComponent // Add this declaration
+        SearchComponent,
+        PlayListBodyComponent,
+        OrderListPipe // Declare the pipe
       ]
     })
-      .compileComponents();
+    .compileComponents();
   });
 
   beforeEach(() => {

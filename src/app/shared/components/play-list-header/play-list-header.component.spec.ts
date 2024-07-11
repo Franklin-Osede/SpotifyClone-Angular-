@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PlayListHeaderComponent } from './play-list-header.component';
 
 describe('PlayListHeaderComponent', () => {
@@ -8,7 +7,7 @@ describe('PlayListHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlayListHeaderComponent]
+      declarations: [PlayListHeaderComponent], // Declare the component here
     })
     .compileComponents();
 

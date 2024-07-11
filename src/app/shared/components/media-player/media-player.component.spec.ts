@@ -1,10 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MediaPlayerComponent } from './media-player.component';
-import { NgModule } from '@angular/core'; // Add this import
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Add this import
 
 // Create a Test Module
 @NgModule({
   declarations: [MediaPlayerComponent], // Declare MediaPlayerComponent
+  imports: [CommonModule], // Import CommonModule here
   exports: [MediaPlayerComponent] // Export MediaPlayerComponent
 })
 class TestModule {} // End of Test Module

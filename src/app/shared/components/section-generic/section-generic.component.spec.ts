@@ -1,10 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SectionGenericComponent } from './section-generic.component'; // Correct import
+import { SectionGenericComponent } from './section-generic.component';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Add this import
 
 // Create a Test Module
 @NgModule({
   declarations: [SectionGenericComponent], // Declare SectionGenericComponent
+  imports: [CommonModule], // Import CommonModule here
   exports: [SectionGenericComponent] // Export SectionGenericComponent
 })
 class TestModule {} // End of Test Module
